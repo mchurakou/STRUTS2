@@ -11,5 +11,11 @@
 <h1>Welcome To Struts 2!</h1>
 
 <p><a href="<s:url action='hello'/>">Hello World</a></p>
+
+<h4>Enter your name </h4>
+<s:form action="hello">
+    <s:textfield name="name" label="Your name"/>
+    <s:submit/>
+</s:form>
 </body>
 </html>
