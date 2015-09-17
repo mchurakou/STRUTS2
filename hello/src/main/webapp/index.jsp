@@ -19,6 +19,10 @@
 
 <p><a href="${helloLink}">Hello World</a></p>
 
+
+<a href="<s:url action="fileForm" />">File page</a>
+
+
 <h4>Enter your name </h4>
 <s:form action="hello">
     <s:textfield name="name" label="Your name"/>

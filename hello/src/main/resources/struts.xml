@@ -38,6 +38,15 @@
             <result name="input">/register.jsp</result>
         </action>
 
+        <action name="fileForm">
+            <result>/filePage.jsp</result>
+        </action>
+
+        <action name="FileUpload" class="com.mikalai.struts2.action.FileUpload">
+            <result>/ImageAdded.jsp</result>
+            <result name="input">/filePage.jsp</result>
+        </action>
+
 
     </package>
 
