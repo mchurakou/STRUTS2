@@ -6,9 +6,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Basic Struts 2 Application - Welcome</title>
+    <s:head/>
 </head>
 <body>
 <h1><s:text name="greeting"/></h1>
+
+<a href="<s:url action="index" namespace="config-browser" />">Launch the configuration browser</a>
 
 <s:url action="hello" var="helloLink">
     <s:param name="name">Bruce Phillips</s:param>
