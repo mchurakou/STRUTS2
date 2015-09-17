@@ -1,11 +1,51 @@
 package com.mikalai.struts2.model;
 
 
+import java.util.List;
+
 public class Person {
     private String firstName;
     private String lastName;
     private String email;
     private int age;
+    private String sport;
+    private String gender;
+    private String residency;
+    private boolean over21;
+    private List<String> carModels;
+
+
+    public boolean isOver21() {
+        return over21;
+    }
+
+    public void setOver21(boolean over21) {
+        this.over21 = over21;
+    }
+
+    public String getResidency() {
+        return residency;
+    }
+
+    public void setResidency(String residency) {
+        this.residency = residency;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getSport() {
+        return sport;
+    }
+
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -40,8 +80,26 @@ public class Person {
     }
 
 
+    public List<String> getCarModels() {
+        return carModels;
+    }
+
+    public void setCarModels(List<String> carModels) {
+        this.carModels = carModels;
+    }
+
+    @Override
     public String toString() {
-        return "First Name: " + getFirstName() + " Last Name:  " + getLastName() +
-                " Email:      " + getEmail() + " Age:      " + getAge();
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", sport='" + sport + '\'' +
+                ", gender='" + gender + '\'' +
+                ", residency='" + residency + '\'' +
+                ", over21=" + over21 +
+                ", carModels=" + carModels +
+                '}';
     }
 }

@@ -2,7 +2,11 @@ package com.mikalai.struts2.action;
 
 
 import com.mikalai.struts2.model.Person;
+import com.mikalai.struts2.model.State;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Register extends ActionSupport {
 
@@ -10,6 +14,36 @@ public class Register extends ActionSupport {
 
     private Person personBean;
 
+
+    private List<String> sports;
+
+
+    private List<String> genders;
+
+
+    private List<State> states;
+
+
+    private List<String> carModelsAvailable;
+
+
+    public Register() {
+        sports = new ArrayList<String>();
+        sports.add("Football");
+        sports.add("Basketball");
+
+        genders = new ArrayList<String>();
+        genders.add("Male");
+        genders.add("Female");
+
+        states = new ArrayList<State>();
+        states.add(new State("TX", "TEXAS"));
+        states.add(new State("MS", "MESSURY"));
+
+        carModelsAvailable = new ArrayList<String>();
+        carModelsAvailable.add("ford");
+        carModelsAvailable.add("bmw");
+    }
 
     @Override
     public String execute() throws Exception {
@@ -40,7 +74,6 @@ public class Register extends ActionSupport {
             addFieldError("personBean.age", getText("age.required"));
 
 
-
         }
 
 
@@ -56,6 +89,40 @@ public class Register extends ActionSupport {
 
         personBean = person;
 
+    }
+
+    public List<String> getSports() {
+        return sports;
+    }
+
+    public void setSports(List<String> sports) {
+        this.sports = sports;
+    }
+
+
+    public List<String> getGenders() {
+        return genders;
+    }
+
+    public void setGenders(List<String> genders) {
+        this.genders = genders;
+    }
+
+    public List<State> getStates() {
+        return states;
+    }
+
+    public void setStates(List<State> states) {
+        this.states = states;
+    }
+
+
+    public List<String> getCarModelsAvailable() {
+        return carModelsAvailable;
+    }
+
+    public void setCarModelsAvailable(List<String> carModelsAvailable) {
+        this.carModelsAvailable = carModelsAvailable;
     }
 
 }
