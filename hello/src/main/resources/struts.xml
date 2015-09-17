@@ -3,11 +3,23 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
+
 <struts>
 
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="global"/>
+
 
     <package name="basicstruts2" extends="struts-default">
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
 
         <action name="index">
             <result>/index.jsp</result>
@@ -22,6 +34,12 @@
             <result name="input">/register.jsp</result>
         </action>
 
+        <action name="registerInput" class="com.mikalai.struts2.action.Register" method="input">
+            <result name="input">/register.jsp</result>
+        </action>
+
+
     </package>
+
 
 </struts>
