@@ -10,12 +10,16 @@
 <body>
 <h1>Welcome To Struts 2!</h1>
 
-<p><a href="<s:url action='hello'/>">Hello World</a></p>
+<s:url action="hello" var="helloLink">
+    <s:param name="name">Bruce Phillips</s:param>
+</s:url>
+
+<p><a href="${helloLink}">Hello World</a></p>
 
 <h4>Enter your name </h4>
 <s:form action="hello">
     <s:textfield name="name" label="Your name"/>
-    <s:submit/>
+    <s:submit value="Submit"/>
 </s:form>
 </body>
 </html>
