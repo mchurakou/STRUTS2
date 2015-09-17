@@ -7,6 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
     <title>Register</title>
+    <s:head/>
 </head>
 <body>
 <h3>Register for a prize by completing this form.</h3>
