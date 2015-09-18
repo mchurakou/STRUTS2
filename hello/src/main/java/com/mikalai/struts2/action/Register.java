@@ -4,11 +4,13 @@ package com.mikalai.struts2.action;
 import com.mikalai.struts2.model.Person;
 import com.mikalai.struts2.model.State;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.SessionAware;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class Register extends ActionSupport {
+public class Register extends ActionSupport implements SessionAware {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,6 +27,8 @@ public class Register extends ActionSupport {
 
 
     private List<String> carModelsAvailable;
+
+    private Map<String, Object> sessionMap;
 
 
     public Register() {
@@ -49,6 +53,8 @@ public class Register extends ActionSupport {
     public String execute() throws Exception {
 
         //call Service class to store personBean's state in database
+
+        sessionMap.put("auth", "auth");
 
         return SUCCESS;
 
@@ -125,4 +131,7 @@ public class Register extends ActionSupport {
         this.carModelsAvailable = carModelsAvailable;
     }
 
+    public void setSession(Map<String, Object> map) {
+        sessionMap = map;
+    }
 }
