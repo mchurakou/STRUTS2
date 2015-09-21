@@ -47,16 +47,16 @@
     <package name="securePackage" extends="basicstruts2">
 
 
-        <interceptors>
-            <interceptor name="authenticationInterceptor"
-                         class="com.mikalai.struts2.interceptor.AuthenticationInterceptor"/>
+        <!--<interceptors>-->
+        <!--<interceptor name="authenticationInterceptor"-->
+        <!--class="com.mikalai.struts2.interceptor.AuthenticationInterceptor"/>-->
 
-            <interceptor-stack name="secureStack">
-                <interceptor-ref name="authenticationInterceptor"/>
-                <interceptor-ref name="defaultStack"/>
-            </interceptor-stack>
-        </interceptors>
-        <default-interceptor-ref name="secureStack"/>
+        <!--<interceptor-stack name="secureStack">-->
+        <!--<interceptor-ref name="authenticationInterceptor"/>-->
+        <!--<interceptor-ref name="defaultStack"/>-->
+        <!--</interceptor-stack>-->
+        <!--</interceptors>-->
+        <!--<default-interceptor-ref name="secureStack"/>-->
 
 
         <action name="fileForm">
