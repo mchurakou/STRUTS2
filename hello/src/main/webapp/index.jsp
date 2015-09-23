@@ -37,6 +37,11 @@
 
 <p><a href="${legacyLink}">Legacy</a></p>
 
+
+<s:url action="oldlink" var="oldlink"/>
+<p><a href="${oldlink}">Old link</a></p>
+
+
 <p><a href="${registerInputLink}">Please register</a> for our prize drawing.</p>
 
 <h3>Registro español</h3>

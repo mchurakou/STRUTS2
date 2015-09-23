@@ -12,15 +12,15 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
 
-    <package name="basicstruts2" extends="struts-default" namespace="/">
+    <package name="basicstruts2" extends="struts1-default" namespace="/">
 
         <global-results>
             <result name="error">/error.jsp</result>
         </global-results>
 
-        <global-exception-mappings>
-            <exception-mapping exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>
+        <!--<global-exception-mappings>-->
+        <!--<exception-mapping exception="java.lang.Exception" result="error"/>-->
+        <!--</global-exception-mappings>-->
 
 
         <action name="index">
@@ -40,8 +40,23 @@
             <result name="input">/register.jsp</result>
         </action>
 
-        <action name="legacy" class="com.mikalai.struts2.action.Legacy" method="${method}">
+        <action name="legacy" class="com.mikalai.struts2.action.Legacy">
             <result name="legacy">/legacy.jsp</result>
+        </action>
+
+        <action name="oldlink" class="org.apache.struts2.s1.Struts1Action">
+            <param name="className">com.mikalai.struts2.action.OldAction</param>
+            <param name="validate">true</param>
+
+            <interceptor-ref name="struts1Stack">
+                <param name="scopedModelDriven.className">com.mikalai.struts2.action.MyForm</param>
+                <param name="scopedModelDriven.name">myForm</param>
+                <param name="scopedModelDriven.scope">session</param>
+            </interceptor-ref>
+
+            <result name="old">/old.jsp</result>
+
+
         </action>
 
 
