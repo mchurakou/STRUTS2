@@ -8,10 +8,11 @@
 
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.custom.i18n.resources" value="global"/>
+    <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
 
-
-    <package name="basicstruts2" extends="struts-default">
+    <package name="basicstruts2" extends="struts-default" namespace="/">
 
         <global-results>
             <result name="error">/error.jsp</result>
@@ -39,12 +40,14 @@
             <result name="input">/register.jsp</result>
         </action>
 
-
+        <action name="legacy" class="com.mikalai.struts2.action.Legacy" method="${method}">
+            <result name="legacy">/legacy.jsp</result>
+        </action>
 
 
     </package>
 
-    <package name="securePackage" extends="basicstruts2">
+    <package name="securePackage" extends="struts-default" namespace="/">
 
 
         <interceptors>
@@ -58,6 +61,14 @@
         </interceptors>
         <default-interceptor-ref name="secureStack"/>
 
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
 
         <action name="fileForm">
             <result>/filePage.jsp</result>

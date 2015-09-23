@@ -32,6 +32,11 @@
 <s:url action="registerInput" var="registerInputLink">
     <s:param name="request_locale">en</s:param>
 </s:url>
+
+<s:url action="legacy!go" var="legacyLink"/>
+
+<p><a href="${legacyLink}">Legacy</a></p>
+
 <p><a href="${registerInputLink}">Please register</a> for our prize drawing.</p>
 
 <h3>Registro español</h3>
