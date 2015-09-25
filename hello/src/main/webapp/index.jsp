@@ -33,13 +33,13 @@
     <s:param name="request_locale">en</s:param>
 </s:url>
 
-<s:url action="legacy!go" var="legacyLink"/>
+<s:url action="legacy!go" var="legacyLink">
+    <s:param name="formName">GOODNAME</s:param>
+</s:url>
 
 <p><a href="${legacyLink}">Legacy</a></p>
+<p><a href="legacy.do?method:go">Legacy2</a></p>
 
-
-<s:url action="oldlink" var="oldlink"/>
-<p><a href="${oldlink}">Old link</a></p>
 
 
 <p><a href="${registerInputLink}">Please register</a> for our prize drawing.</p>

@@ -6,9 +6,9 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.opensymphony.xwork2" level="info"/>
-        <Logger name="org.apache.struts2" level="debug"/>
-        <Root level="warn">
+        <Logger name="com.opensymphony.xwork2" level="INFO"/>
+        <Logger name="org.apache.struts2" level="DEBUG"/>
+        <Root level="INFO">
             <AppenderRef ref="STDOUT"/>
         </Root>
     </Loggers>
