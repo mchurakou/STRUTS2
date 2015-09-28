@@ -4,17 +4,18 @@ package com.mikalai.struts2.action;
 import com.mikalai.struts2.model.Person;
 import com.mikalai.struts2.model.State;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.interceptor.SessionAware;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Register extends ActionSupport implements SessionAware {
+public class Register extends ActionSupport implements SessionAware, ModelDriven<Person> {
 
     private static final long serialVersionUID = 1L;
 
-    private Person personBean;
+    private Person personBean = new Person();
 
 
     private List<String> sports;
@@ -62,22 +63,22 @@ public class Register extends ActionSupport implements SessionAware {
 
     public void validate() {
 
-        if (personBean.getFirstName().length() == 0) {
-
-            addFieldError("personBean.firstName", getText("firstname.required"));
-
-        }
-
-
-        if (personBean.getEmail().length() == 0) {
-
-            addFieldError("personBean.email", getText("email.required"));
-
-        }
+//        if (personBean.getFirstName().length() == 0) {
+//
+//            addFieldError("personBean.firstName", getText("firstname.required"));
+//
+//        }
+//
+//
+//        if (personBean.getEmail().length() == 0) {
+//
+//            addFieldError("personBean.email", getText("email.required"));
+//
+//        }
 
         if (personBean.getAge() < 18) {
 
-            addFieldError("personBean.age", getText("age.required"));
+            addFieldError("age", getText("age.required"));
 
 
         }
@@ -133,5 +134,10 @@ public class Register extends ActionSupport implements SessionAware {
 
     public void setSession(Map<String, Object> map) {
         sessionMap = map;
+    }
+
+    @Override
+    public Person getModel() {
+        return personBean;
     }
 }

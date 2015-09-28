@@ -14,15 +14,15 @@
 
 <s:form action="register">
 
-    <s:textfield key="personBean.firstName"/>
-    <s:textfield key="personBean.lastName"/>
-    <s:textfield key="personBean.email"/>
-    <s:textfield key="personBean.age"/>
-    <s:select key="personBean.sport" list="sports"/>
-    <s:radio key="personBean.gender" list="genders"/>
-    <s:select key="personBean.residency" list="states" listKey="stateAbbr" listValue="stateName"/>
-    <s:checkbox key="personBean.over21"/>
-    <s:checkboxlist key="personBean.carModels" list="carModelsAvailable"/>
+    <s:textfield key="firstName"/>
+    <s:textfield key="lastName"/>
+    <s:textfield key="email"/>
+    <s:textfield key="age"/>
+    <s:select key="sport" list="sports"/>
+    <s:radio key="gender" list="genders"/>
+    <s:select key="residency" list="states" listKey="stateAbbr" listValue="stateName"/>
+    <s:checkbox key="over21"/>
+    <s:checkboxlist key="carModels" list="carModelsAvailable"/>
 
     <s:submit/>
 

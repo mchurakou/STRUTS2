@@ -1,11 +1,17 @@
 package com.mikalai.struts2.model;
 
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 public class Person {
+    @NotNull(message="firstname.required")
+    @Size(min = 4, message="firstname.required")
     private String firstName;
     private String lastName;
+    @NotNull(message="email.required")
+    @Size(min = 4, message="email.required")
     private String email;
     private int age;
     private String sport;
