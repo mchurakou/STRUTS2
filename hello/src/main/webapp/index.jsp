@@ -41,6 +41,9 @@
 <p><a href="legacy.do?method:go">Legacy2</a></p>
 
 
+<p><a href="ActionJSON.do">JSON</a></p>
+
+
 
 <p><a href="${registerInputLink}">Please register</a> for our prize drawing.</p>
 

@@ -10,13 +10,24 @@
     <constant name="struts.custom.i18n.resources" value="global"/>
     <constant name="struts.action.extension" value="do"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+
     <!--<constant name="struts.ui.theme" value="simple"/>-->
 
 
     <package name="basicstruts2" extends="struts-default" namespace="/">
 
 
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+
+
         <interceptors>
+
+            <interceptor name="jsonValidation" class="org.apache.struts2.json.JSONValidationInterceptor"/>
+
             <interceptor  name="beanValidation"
                     class="org.apache.struts.beanvalidation.validation.interceptor.BeanValidationInterceptor"/>
 
@@ -43,6 +54,7 @@
                 <interceptor-ref name="validation">
                     <param name="excludeMethods">input,back,cancel,browse</param>
                 </interceptor-ref>
+                <interceptor-ref name="jsonValidation"/>
                 <interceptor-ref name="workflow">
                     <param name="excludeMethods">input,back,cancel,browse</param>
                 </interceptor-ref>
@@ -90,6 +102,10 @@
 
 
 
+        </action>
+
+        <action name="ActionJSON" class="com.mikalai.struts2.action.ActionJSON">
+            <result type="json"/>
         </action>
 
     </package>
