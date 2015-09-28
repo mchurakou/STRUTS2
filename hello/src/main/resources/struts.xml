@@ -5,17 +5,6 @@
 
 
 <struts>
-
-    <constant name="struts.devMode" value="true"/>
-    <constant name="struts.custom.i18n.resources" value="global"/>
-    <constant name="struts.action.extension" value="do"/>
-    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
-    <constant name="struts.i18n.encoding" value="UTF-8"/>
-
-
-    <!--<constant name="struts.ui.theme" value="simple"/>-->
-
-
     <package name="basicstruts2" extends="struts-default" namespace="/">
 
 
