@@ -1,17 +1,18 @@
 package com.mikalai.struts2.model;
 
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
 public class Person {
-    @NotNull(message="firstname.required")
-    @Size(min = 4, message="firstname.required")
+    @NotNull(message = "firstname.required")
+    @Size(min = 4, message = "firstname.required")
     private String firstName;
     private String lastName;
-    @NotNull(message="email.required")
-    @Size(min = 4, message="email.required")
+    @NotNull(message = "email.required")
+    @Size(min = 4, message = "email.required")
     private String email;
     private int age;
     private String sport;
@@ -19,6 +20,10 @@ public class Person {
     private String residency;
     private boolean over21;
     private List<String> carModels;
+
+    @Valid
+    private Address address;
+
 
 
     public boolean isOver21() {
@@ -108,4 +113,14 @@ public class Person {
                 ", carModels=" + carModels +
                 '}';
     }
+
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
 }

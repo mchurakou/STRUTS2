@@ -83,7 +83,7 @@
 
         <action name="legacy" class="com.mikalai.struts2.action.Legacy">
 
-            <interceptor-ref name="defaultStack">
+            <interceptor-ref name="appStack">
                 <param name="scopedModelDriven.name">myForm</param>
                 <param name="scopedModelDriven.scope">session</param>
             </interceptor-ref>

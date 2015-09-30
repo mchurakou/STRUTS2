@@ -18,6 +18,9 @@
     <s:textfield key="lastName"/>
     <s:textfield key="email"/>
     <s:textfield key="age"/>
+    <s:textfield key="address.city"/>
+    <s:textfield key="address.street"/>
+    <s:textfield key="address.home.number"/>
     <s:select key="sport" list="sports"/>
     <s:radio key="gender" list="genders"/>
     <s:select key="residency" list="states" listKey="stateAbbr" listValue="stateName"/>
