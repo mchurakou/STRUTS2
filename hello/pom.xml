@@ -53,6 +53,13 @@
             <version>${struts.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-tiles3-plugin</artifactId>
+            <version>${struts.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
 
 
 

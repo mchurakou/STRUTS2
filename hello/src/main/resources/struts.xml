@@ -10,6 +10,7 @@
 
         <result-types>
             <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
 
 
@@ -95,6 +96,14 @@
 
         <action name="ActionJSON" class="com.mikalai.struts2.action.ActionJSON">
             <result type="json"/>
+        </action>
+
+        <action name="Tiles" >
+            <result type="tiles">tiles.example</result>
+        </action>
+
+        <action name="ChildTiles" >
+            <result type="tiles">child.tiles.example</result>
         </action>
 
     </package>
